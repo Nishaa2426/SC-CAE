@@ -404,7 +404,7 @@ Completed implementation activities:
 
 The source code and implementation resources are available through the public GitHub repository.
 
-**GitHub:** https://github.com/YOUR-USERNAME/SC-CAE
+**GitHub:** https://github.com/Nishaa2426/SC-CAE
 
 
 ## 17. Conclusion
