@@ -1,0 +1,460 @@
+{
+  "timestamp": "2026-06-30 11:54:02",
+  "total_frames": 30,
+  "confirmed_intrusions": 0,
+  "possible_intrusions": 0,
+  "network_alerts": 11,
+  "normal_frames": 19,
+  "results": [
+    {
+      "frame": "Test001_001.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00298,
+      "network_anomaly": false,
+      "network_score": 0.4636,
+      "network_features": [
+        128.01520315414336,
+        41.45437832743793,
+        5.498214270055939
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_002.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003039,
+      "network_anomaly": false,
+      "network_score": 0.4789,
+      "network_features": [
+        119.17105107135973,
+        72.09801095367601,
+        11.429664578172002
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_003.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003069,
+      "network_anomaly": true,
+      "network_score": 0.5331,
+      "network_features": [
+        410.81813765459754,
+        233.8157402700351,
+        59.99789132264291
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_004.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003025,
+      "network_anomaly": false,
+      "network_score": 0.4715,
+      "network_features": [
+        52.4813967173662,
+        52.95687386799208,
+        12.825481416787806
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_005.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003024,
+      "network_anomaly": false,
+      "network_score": 0.4625,
+      "network_features": [
+        98.74171314399597,
+        32.832872263434524,
+        9.038433969180142
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_006.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003055,
+      "network_anomaly": false,
+      "network_score": 0.4626,
+      "network_features": [
+        129.32910786554356,
+        61.61156157280155,
+        9.633435421070253
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_007.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002993,
+      "network_anomaly": true,
+      "network_score": 0.5253,
+      "network_features": [
+        430.50297069373016,
+        185.30586808855463,
+        51.29248811259737
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_008.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002992,
+      "network_anomaly": true,
+      "network_score": 0.5245,
+      "network_features": [
+        491.4145223773063,
+        211.7779205704923,
+        51.267581869067115
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_009.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003003,
+      "network_anomaly": false,
+      "network_score": 0.4512,
+      "network_features": [
+        104.08160962267628,
+        55.80656214185848,
+        12.081909296180987
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_010.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003021,
+      "network_anomaly": false,
+      "network_score": 0.4785,
+      "network_features": [
+        146.0379745075635,
+        39.1591516504924,
+        10.502475373236956
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_011.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00299,
+      "network_anomaly": true,
+      "network_score": 0.5285,
+      "network_features": [
+        426.99369675387305,
+        187.09653379263844,
+        59.860159847387976
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_012.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003001,
+      "network_anomaly": false,
+      "network_score": 0.4739,
+      "network_features": [
+        124.82351062204502,
+        68.74209716269547,
+        6.706297066831759
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_013.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002929,
+      "network_anomaly": false,
+      "network_score": 0.4793,
+      "network_features": [
+        70.7654599558225,
+        30.660223622910582,
+        7.922962835157868
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_014.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002861,
+      "network_anomaly": true,
+      "network_score": 0.5318,
+      "network_features": [
+        370.5230884560448,
+        229.62827128273415,
+        44.16883888826903
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_015.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00286,
+      "network_anomaly": false,
+      "network_score": 0.4724,
+      "network_features": [
+        68.64511436360266,
+        33.72770248688413,
+        6.645205816775453
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_016.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002886,
+      "network_anomaly": false,
+      "network_score": 0.4518,
+      "network_features": [
+        86.34192453476861,
+        44.35907304273235,
+        10.801127457494317
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_017.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002961,
+      "network_anomaly": false,
+      "network_score": 0.4612,
+      "network_features": [
+        129.71033140461276,
+        48.394073848040975,
+        14.029865116970498
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_018.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002959,
+      "network_anomaly": false,
+      "network_score": 0.4771,
+      "network_features": [
+        139.59371925270304,
+        67.02587677365867,
+        10.038343861097207
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_019.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002992,
+      "network_anomaly": true,
+      "network_score": 0.5057,
+      "network_features": [
+        50.75250481866417,
+        75.72426210383856,
+        7.217050932219971
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_020.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002953,
+      "network_anomaly": true,
+      "network_score": 0.5312,
+      "network_features": [
+        320.6536315244597,
+        154.01636367124365,
+        51.67079355362972
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_021.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002937,
+      "network_anomaly": false,
+      "network_score": 0.4967,
+      "network_features": [
+        72.11440069515523,
+        78.25055237997341,
+        6.036020948293953
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_022.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00294,
+      "network_anomaly": false,
+      "network_score": 0.4647,
+      "network_features": [
+        61.64077215073384,
+        48.54087252499357,
+        6.541006322196652
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_023.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002968,
+      "network_anomaly": false,
+      "network_score": 0.4593,
+      "network_features": [
+        74.46645208938929,
+        58.43938230791059,
+        8.60932647523023
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_024.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002912,
+      "network_anomaly": true,
+      "network_score": 0.522,
+      "network_features": [
+        468.2607865731888,
+        190.5526318048768,
+        50.44276195568329
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_025.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002898,
+      "network_anomaly": false,
+      "network_score": 0.4621,
+      "network_features": [
+        99.02933025552402,
+        64.73329102554655,
+        5.148914789122966
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_026.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002838,
+      "network_anomaly": false,
+      "network_score": 0.455,
+      "network_features": [
+        123.59549679348272,
+        53.93572014736333,
+        12.754275143734027
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    },
+    {
+      "frame": "Test001_027.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00286,
+      "network_anomaly": true,
+      "network_score": 0.5341,
+      "network_features": [
+        555.7143079210505,
+        240.9089529073853,
+        56.69914617721306
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_028.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002944,
+      "network_anomaly": true,
+      "network_score": 0.5287,
+      "network_features": [
+        400.5227777599374,
+        161.7358364226628,
+        47.695357314914695
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_029.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002989,
+      "network_anomaly": true,
+      "network_score": 0.5293,
+      "network_features": [
+        344.1775148980869,
+        183.81076715915393,
+        42.517478013009736
+      ],
+      "decision": "\ud83d\udd35 NETWORK ALERT (Logged Only)",
+      "confidence": "LOW",
+      "alert_level": 1
+    },
+    {
+      "frame": "Test001_030.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002925,
+      "network_anomaly": false,
+      "network_score": 0.4499,
+      "network_features": [
+        113.87850147407946,
+        53.30448047375156,
+        10.781992375092049
+      ],
+      "decision": "\u2705 NORMAL",
+      "confidence": "LOW",
+      "alert_level": 0
+    }
+  ]
+}

@@ -1,0 +1,553 @@
+{
+  "timestamp": "2026-07-08 11:06:23",
+  "summary": {
+    "total_frames": 30,
+    "confirmed_intrusions": 0,
+    "possible_intrusions": 0,
+    "network_alerts_logged": 0,
+    "normal_frames": 30,
+    "false_alarm_reduction": 0.0
+  },
+  "results": [
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_001.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00298,
+      "network_anomaly": false,
+      "network_score": 0.4684,
+      "network_features": [
+        120.48968670921082,
+        67.53386926067228,
+        12.115615878269672
+      ],
+      "timestamp": "2026-07-08 11:06:20"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_002.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003039,
+      "network_anomaly": false,
+      "network_score": 0.476,
+      "network_features": [
+        148.54140407966406,
+        58.85795610445771,
+        9.362171006306756
+      ],
+      "timestamp": "2026-07-08 11:06:20"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_003.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003069,
+      "network_anomaly": false,
+      "network_score": 0.4967,
+      "network_features": [
+        62.47379706280206,
+        78.01331701805039,
+        12.709758462409166
+      ],
+      "timestamp": "2026-07-08 11:06:20"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_004.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003025,
+      "network_anomaly": false,
+      "network_score": 0.4596,
+      "network_features": [
+        85.96217542734124,
+        34.88943868303288,
+        11.218976987168439
+      ],
+      "timestamp": "2026-07-08 11:06:20"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_005.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003024,
+      "network_anomaly": false,
+      "network_score": 0.4562,
+      "network_features": [
+        113.35224562818547,
+        60.13767323185376,
+        7.622734883667132
+      ],
+      "timestamp": "2026-07-08 11:06:20"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_006.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003055,
+      "network_anomaly": false,
+      "network_score": 0.4908,
+      "network_features": [
+        84.47954915125872,
+        79.95280727007027,
+        12.538724801552771
+      ],
+      "timestamp": "2026-07-08 11:06:20"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_007.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002993,
+      "network_anomaly": false,
+      "network_score": 0.4496,
+      "network_features": [
+        101.82280664815244,
+        49.71872622088716,
+        9.878171926384624
+      ],
+      "timestamp": "2026-07-08 11:06:20"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_008.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002992,
+      "network_anomaly": false,
+      "network_score": 0.4556,
+      "network_features": [
+        101.02682300941862,
+        37.31935071924786,
+        10.183036218045665
+      ],
+      "timestamp": "2026-07-08 11:06:20"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_009.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003003,
+      "network_anomaly": false,
+      "network_score": 0.4631,
+      "network_features": [
+        103.0267529192366,
+        66.59995113804777,
+        11.37206497108852
+      ],
+      "timestamp": "2026-07-08 11:06:20"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_010.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003021,
+      "network_anomaly": false,
+      "network_score": 0.4664,
+      "network_features": [
+        66.91576775155809,
+        60.079869820793775,
+        11.050889538495364
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_011.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00299,
+      "network_anomaly": false,
+      "network_score": 0.4978,
+      "network_features": [
+        138.50643751874986,
+        78.82458729578383,
+        6.935884373844322
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_012.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.003001,
+      "network_anomaly": false,
+      "network_score": 0.4571,
+      "network_features": [
+        75.94275088825555,
+        47.42447391477189,
+        5.522366531888331
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_013.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002929,
+      "network_anomaly": false,
+      "network_score": 0.4584,
+      "network_features": [
+        87.45426226109507,
+        59.712947774872646,
+        5.20007966437218
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_014.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002861,
+      "network_anomaly": false,
+      "network_score": 0.4695,
+      "network_features": [
+        120.09725675555549,
+        33.37326085945941,
+        14.751258206240244
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_015.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00286,
+      "network_anomaly": false,
+      "network_score": 0.45,
+      "network_features": [
+        95.23717465160642,
+        54.03702319069299,
+        7.8082186953968975
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_016.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002886,
+      "network_anomaly": false,
+      "network_score": 0.4534,
+      "network_features": [
+        118.33706014270074,
+        44.79272653763255,
+        6.904827265601901
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_017.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002961,
+      "network_anomaly": false,
+      "network_score": 0.4506,
+      "network_features": [
+        87.36632879103666,
+        54.093112600218554,
+        10.493355898419939
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_018.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002959,
+      "network_anomaly": false,
+      "network_score": 0.4712,
+      "network_features": [
+        136.44671555792183,
+        65.02571384758411,
+        9.010778509975522
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_019.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002992,
+      "network_anomaly": false,
+      "network_score": 0.4508,
+      "network_features": [
+        112.36317883407142,
+        48.215707851231635,
+        9.140656446199177
+      ],
+      "timestamp": "2026-07-08 11:06:21"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_020.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002953,
+      "network_anomaly": false,
+      "network_score": 0.463,
+      "network_features": [
+        72.81436521892861,
+        62.0217891860787,
+        6.70784084505009
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_021.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002937,
+      "network_anomaly": false,
+      "network_score": 0.4927,
+      "network_features": [
+        63.146451721438325,
+        76.8508082341801,
+        10.658641084748211
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_022.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00294,
+      "network_anomaly": false,
+      "network_score": 0.4563,
+      "network_features": [
+        111.6742598777409,
+        38.84245329278021,
+        8.707828008377803
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_023.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002968,
+      "network_anomaly": false,
+      "network_score": 0.4676,
+      "network_features": [
+        143.38529289825937,
+        57.80521256833338,
+        11.218892893521982
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_024.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002912,
+      "network_anomaly": false,
+      "network_score": 0.4535,
+      "network_features": [
+        112.52912646710313,
+        57.38350591654208,
+        6.513727547299194
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_025.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002898,
+      "network_anomaly": false,
+      "network_score": 0.4756,
+      "network_features": [
+        82.82046943289332,
+        69.1132836640989,
+        5.033453988540066
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_026.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002838,
+      "network_anomaly": false,
+      "network_score": 0.4626,
+      "network_features": [
+        77.146914213458,
+        37.76517189803005,
+        9.526785575618064
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_027.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.00286,
+      "network_anomaly": false,
+      "network_score": 0.4507,
+      "network_features": [
+        117.11293673096316,
+        48.108934796231885,
+        9.79333049969773
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_028.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002944,
+      "network_anomaly": false,
+      "network_score": 0.4571,
+      "network_features": [
+        69.06047677826456,
+        49.00693156471787,
+        11.532180407330348
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_029.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002989,
+      "network_anomaly": false,
+      "network_score": 0.4864,
+      "network_features": [
+        97.02681004986161,
+        77.5155722673446,
+        9.581471058943178
+      ],
+      "timestamp": "2026-07-08 11:06:22"
+    },
+    {
+      "status": "NORMAL",
+      "confidence": "LOW",
+      "icon": "\u2705",
+      "action": "NONE",
+      "level": 0,
+      "frame": "Test001_030.jpg",
+      "visual_anomaly": false,
+      "visual_error": 0.002925,
+      "network_anomaly": false,
+      "network_score": 0.4898,
+      "network_features": [
+        92.10323391246004,
+        77.18111327133327,
+        5.516016886105778
+      ],
+      "timestamp": "2026-07-08 11:06:23"
+    }
+  ]
+}
