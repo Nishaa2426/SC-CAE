@@ -313,7 +313,7 @@ Note: The folder and file names above represent the intended repository organiza
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/SC-CAE.git
+git clone https://github.com/Nishaa2426/SC-CAE.git
 ```
 
 ### Step 2: Navigate to the Project
