@@ -1,182 +1,427 @@
-# Add A Figure Factory to the Plotly [Python Library](https://plot.ly/python/)
 
-Note: we are generally NOT accepting new figure factories anymore. We'll keep this doc around for context and in case we decide to make an exception, but we've found that figure factories expand the scope of the library (and its maintenance burden) beyond what really makes sense, and generates confusion about how these figures relate to the underlying plotly.js objects.
+# A Convolutional Autoencoder Approach for Unsupervised Anomaly Analysis
 
-That doesn't mean this pattern is discouraged though, far from it! We encourage you to make more such high-level functions and share them with the community as separate PyPI packages, GitHub Gists, or posts on https://community.plotly.com.
+### Surveillance Convolutional Autoencoder (SC-CAE)
 
-## What is a Figure Factory?
-In the Python Plotly Library:
+An unsupervised deep learning approach for identifying unusual visual patterns in surveillance images using a Convolutional Autoencoder (CAE).
 
-We have basic plot types that are created using the `plotly.graph_objs` module.
-These plot types include Scatter, Box and Bar types. For a complete list see the [graph_objs file](https://github.com/plotly/plotly.py/blob/master/plotly/graph_objs/graph_objs.py). They are the basis of the plots and charts instantiated by Plotly.
+---
 
-To create a basic chart like this, first we create the `data` using the tools in `plotly.graph_objs` and then we plot it. For example:
+## 1. Project Overview
 
-```
-import plotly.plotly as py
-import plotly.graph_objs as go
+Video surveillance systems continuously generate large amounts of visual data. Manually monitoring every frame is difficult and may result in unusual events being overlooked.
 
-trace = go.Scatter(
-    x = [1, 2, 3],
-    y = [4, 5, 6],
-    mode = 'markers',
-)
+This project proposes a **Surveillance Convolutional Autoencoder (SC-CAE)** approach for unsupervised anomaly analysis. The model learns normal visual patterns from surveillance images and identifies potential anomalies using reconstruction error.
 
-data = [trace]
+The proposed approach uses a Convolutional Autoencoder to reconstruct input images. The reconstruction error is calculated by comparing the original image with its reconstructed output. Images with reconstruction errors exceeding a statistically determined threshold are identified as potential anomalies.
 
-py.iplot(data, filename='new-scatter-plot')
-```
+The project is implemented and evaluated using the UCSD Ped1 pedestrian surveillance dataset.
 
-There is another type of chart which uses these basic plot types to make other types of graphs, and these are the figure factories. These are wrappers that utilize the code from `plotly.graph_objs` to build charts that can use their structures. A good example of a figure factory is the [Scatterplot Matrix](https://plot.ly/python/scatterplot-matrix/) as it utilizes `go.Scatter`, `go.Box` and `go.Histogram`.
+## 2. Problem Statement
 
-So if you have ever wanted to contribute to the Plotly Python Library by adding a new chart type we don't have, now you can! This README will help you get started by cloning the plotly.py repo, forking a new branch, creating a new figure factory, and creating a new Pull Request to get feedback for merging. Just follow all these steps and you'll be ready to go.
+Traditional surveillance monitoring depends heavily on human observation and predefined detection techniques. Continuous manual monitoring becomes challenging when surveillance systems generate a large number of frames.
 
-## Getting Started:
-1. In the Terminal, clone the `plotly.py` repo locally and then check out the master branch.
+Furthermore, abnormal events are rare and diverse, making it difficult to obtain labelled examples for every possible anomaly.
 
-```
-$ git clone git@github.com:plotly/plotly.py.git
-$ git fetch origin
-$ git checkout master
-```
+Therefore, an unsupervised approach is investigated to learn normal visual patterns and identify deviations without requiring labelled anomaly images during model training.
 
-2. Create a new branch off the master branch and give it an appropriate name.
+## 3. Project Objectives
 
-```
-$ git checkout -b "add-ff-type"
-```
+- Develop a Convolutional Autoencoder for unsupervised anomaly analysis.
+- Learn normal visual representations from surveillance images.
+- Reconstruct input images using an encoder-decoder architecture.
+- Calculate reconstruction error to identify unusual visual patterns.
+- Apply a statistical threshold for anomaly classification.
+- Generate reconstruction error heatmaps to highlight suspicious regions.
+- Evaluate the proposed approach using standard performance metrics.
 
-## Create a figure_factory File
-1. Creating python file
+## 4. Dataset
 
-Move to the `plotly/figure_factory` directory in the `plotly.py` repo. To do this, open up the Terminal and execute the command:
+**Dataset:** UCSD Anomaly Detection Dataset - Pedestrian 1 (Ped1)
 
-```
-cd plotly/figure_factory
-```
+The UCSD Ped1 dataset is used to evaluate the proposed approach in a pedestrian surveillance environment.
 
-By running `ls` in the Terminal, you will get a list of all files in your current directory. In the `plotly/figure_factory` directory there is an `__init__.py` file as well as a bunch of `_ff_type.py` files. Each figure factory chart gets its own python file, and the name of each of these python files are found in the `__init__.py` file.
+### Dataset Information
 
-If you are making a chart called `foo`, then you must create `_foo.py` in this directory.
+| Description | Details |
+|---|---|
+| Dataset | UCSD Ped1 |
+| Total frames | 14,000 |
+| Training clips | 34 |
+| Testing clips | 36 |
+| Training frames | 6,800 |
+| Testing frames | 7,200 |
+| Training images | Normal training samples |
+| Testing images | Normal and anomalous samples |
 
+### Preprocessing
 
-2. Updating `__init__.py`
+The following preprocessing operations are performed:
 
-The inside of the `__init__.py` looks like:
+- Extraction of image frames from surveillance video clips.
+- Resizing images to 224 × 224 pixels.
+- Conversion to grayscale.
+- Normalization of pixel values to the range [0, 1].
+- Division of normal training images into training and validation sets.
 
-```
-# Require that numpy exists for figure_factory
-import numpy
+The training dataset contains 5,780 training images and 1,020 validation images.
 
-from plotly.figure_factory._2d_density import create_2d_density
-from plotly.figure_factory._annotated_heatmap import create_annotated_heatmap
-from plotly.figure_factory._candlestick import create_candlestick
-...
-```
+**Note:** The UCSD dataset is used for research and evaluation. The dataset itself is not included in this repository. Users should obtain it from its original source and follow its applicable terms of use.
 
-Now add the following line to the end of `__init__.py`:
+## 5. Proposed Methodology
 
-```
-from plotly.figure_factory._foo import create_foo
-```
+The proposed SC-CAE approach follows a reconstruction-based anomaly detection process.
 
-3. The main function
+### Workflow
 
-It's now time to write the main function `create_foo` that will be called directly by the user. It lives in `_foo.py` and has the form:
+1. Input surveillance images are collected from the UCSD Ped1 dataset.
+2. Normal images are used to train the Convolutional Autoencoder.
+3. The encoder extracts important visual features.
+4. The latent representation captures compressed image information.
+5. The decoder reconstructs the input image.
+6. Reconstruction error is calculated between the original and reconstructed images.
+7. A statistical threshold is applied to classify potential anomalies.
+8. Heatmaps are generated to visualize regions with higher reconstruction errors.
 
-```
-def create_foo(attribute1, attribute2=value, ...):
-    """
-    Returns figure for a foo plot.
+### Methodology Flow
 
-    :param (type) attribute1: description of 'attribute1'.
-    :param (type) attribute2: description of what 'attribute2' is.
-        Default = value
-    # ...
-
-    Example 1:
-    '''
-
-    '''
-
-    Example 2:
-    '''
-
-    '''
-    """
-    # code goes here
-    return fig
-```
-
-You _must_ include a documentation string in your function. A doc string is a block string that contains useful information about what the function does, the arguments of the function and their descriptions, and examples of this function in use. The doc string is displayed when the help method is run by a user: `help(create_foo)` or `create_foo?` in python.
-
-The parameters are listed in the doc string with the format
-```
-:param (param_type) param_name: description.
-```
-Afterwards, you must include examples which demonstrate the different capabilities and features of the function. For more information on proper doc string syntax see [PEP-257 page](https://www.python.org/dev/peps/pep-0257/).
-
-After the doc string, you will add the main code of your function which should result in returning the fig, i.e. `return fig`.
-
-```
-# create figure
-fig = create_foo(...)
-
-# plot figure
-py.iplot(fig, filename='my_figure')
+```text
+UCSD Ped1 Dataset
+        |
+        v
+Image Frame Extraction
+        |
+        v
+Image Preprocessing
+        |
+        v
+Normal Training Images
+        |
+        v
+CNN Autoencoder Training
+        |
+        v
+Image Reconstruction
+        |
+        v
+Reconstruction Error
+        |
+        v
+Statistical Threshold
+        |
+        v
+Anomaly Classification
+        |
+        v
+Reconstruction Error Heatmap
 ```
 
-The figure `fig` must be a Plotly Figure, meaning it must have the form `fig = graph_objs.Figure(data=data, layout=layout)`.
+## 6. CNN Autoencoder Architecture
 
-4. Useful Tips
+The proposed model uses a symmetric Convolutional Autoencoder consisting of an encoder and a decoder.
 
-It is often not a good idea to put all your code into your `create_foo()` function. It is best practice to not repeat yourself and this requires taking repeated blocks of code and putting them into a separate function.
+### Encoder
 
-It is best to make all other functions besides `create_foo()` secret so a user cannot access them. This is done by placing a `_` before the name of the function, so `_aux_func()` for example.
+The encoder extracts visual features from the input image through convolutional and pooling operations.
 
-5. Tests
+The encoder uses four convolutional stages with the following filter configuration:
 
-Add unit tests in
-`tests/test_optional/test_figure_factory/test_figure_factory.py`.
+- 32 filters
+- 64 filters
+- 128 filters
+- 256 filters
 
-## Create a Pull Request
+Each stage uses 3 × 3 convolution operations with ReLU activation and 2 × 2 max-pooling.
 
-Now add changes to your current local branch
+### Latent Representation
 
+The compressed representation captures important features of the input image.
+
+Latent representation: 14 × 14 × 256
+
+### Decoder
+
+The decoder reconstructs the image using upsampling and convolution operations.
+
+The decoder gradually restores the spatial dimensions and generates the reconstructed output using a final sigmoid activation.
+
+### Model Configuration
+
+| Parameter | Configuration |
+|---|---|
+| Model | Convolutional Autoencoder |
+| Input size | 224 × 224 × 1 |
+| Encoder filters | 32, 64, 128, 256 |
+| Latent representation | 14 × 14 × 256 |
+| Optimizer | Adam |
+| Learning rate | 0.001 |
+| Batch size | 32 |
+| Epochs | 50 |
+| Loss function | Mean Squared Error (MSE) |
+
+## 7. Reconstruction Error and Anomaly Detection
+
+The model reconstructs an input image and compares it with the original image.
+
+Mean Squared Error (MSE) is used to calculate the reconstruction error.
+
+The reconstruction error is expressed as:
+
+MSE = (1/N) × Σ(xᵢ - x̂ᵢ)²
+
+Where:
+
+- x represents the original image.
+- x̂ represents the reconstructed image.
+- N represents the total number of image pixels.
+
+### Statistical Threshold
+
+A statistical threshold is calculated using the mean and standard deviation of reconstruction errors from normal training samples.
+
+T = μₙ + kσₙ
+
+Where:
+
+- T represents the anomaly threshold.
+- μₙ represents the mean normal reconstruction error.
+- σₙ represents the standard deviation of normal reconstruction error.
+- k represents a scaling factor.
+
+In the current experimental configuration, k = 3.
+
+### Anomaly Decision
+
+- If reconstruction error is greater than the threshold, the image is classified as a potential anomaly.
+- Otherwise, the image is classified as normal.
+
+### Heatmap Visualization
+
+Reconstruction error heatmaps provide a visual representation of differences between the original and reconstructed images.
+
+Regions with higher reconstruction errors are highlighted to support anomaly localization.
+
+## 8. Experimental Results
+
+The proposed SC-CAE model is evaluated using standard classification metrics.
+
+### Evaluation Metrics
+
+| Metric | Proposed SC-CAE |
+|---|---:|
+| Accuracy | 79.00% |
+| Precision | 91.43% |
+| Recall | 64.00% |
+| F1-score | 75.29% |
+| ROC-AUC | 0.962 |
+
+### Confusion Matrix
+
+| Actual / Predicted | Normal | Anomaly |
+|---|---:|---:|
+| Normal | 47 | 3 |
+| Anomaly | 18 | 32 |
+
+### Performance Interpretation
+
+- **Accuracy:** Measures the overall proportion of correct classifications.
+- **Precision:** Measures how many predicted anomalies were actually anomalous.
+- **Recall:** Measures how many actual anomalies were successfully identified.
+- **F1-score:** Represents the balance between precision and recall.
+- **ROC-AUC:** Measures the model's ability to distinguish normal and anomalous samples across different decision thresholds.
+
+The experimental results indicate a higher precision than recall, suggesting that some actual anomalous samples are not identified at the selected operating threshold.
+
+## 9. Applications
+
+### Current Application
+
+The current implementation focuses on pedestrian surveillance anomaly analysis.
+
+Potential surveillance applications include:
+
+- Public area surveillance.
+- Campus security monitoring.
+- Pedestrian walkway monitoring.
+- Identification of unusual activities.
+- Automated visual surveillance assistance.
+
+### Future Applications
+
+The reconstruction-based approach can potentially be investigated in other visual inspection domains, including:
+
+- Industrial pipeline monitoring.
+- Pressurized pipeline inspection.
+- Corrosion and structural defect analysis.
+- Infrastructure safety monitoring.
+- Predictive maintenance.
+- Unsupervised visual defect detection.
+
+These applications require further dataset-specific training and experimental validation.
+
+## 10. Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python | Programming language |
+| TensorFlow / Keras | Deep learning implementation |
+| Convolutional Autoencoder | Image reconstruction |
+| OpenCV | Image processing |
+| NumPy | Numerical operations |
+| Matplotlib | Result visualization |
+| Scikit-learn | Performance evaluation |
+| Visual Studio Code | Development environment |
+| Git and GitHub | Version control and source code hosting |
+
+## 11. Repository Structure
+
+The repository contains the implementation scripts and supporting project resources.
+
+```text
+SC-CAE/
+│
+├── autoencoder_train.py
+├── phase1_complete.py
+├── phase1_autoencoder_fixed.py
+├── data_generator.py
+├── extract_ucsd_final.py
+├── fusion_system_complete.py
+├── intrusion_ui.py
+├── network_detector.py
+├── load_data_simple.py
+├── organize_frames.py
+│
+├── models/
+├── results/
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
-$ git add -a
+
+Note: The folder and file names above represent the intended repository organization. Update this structure to match the actual files uploaded to GitHub.
+
+## 12. Installation and Execution
+
+### Prerequisites
+
+- Python 3.10 or another version supported by your TensorFlow release.
+- pip package manager.
+- Visual Studio Code.
+- UCSD Ped1 dataset.
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/YOUR-USERNAME/SC-CAE.git
 ```
 
-and commit these changes and write a commit message.
+### Step 2: Navigate to the Project
 
-```
-$ git commit -m "this is the work that I did"
-```
-
-After you have added and committed all of your changes to the local branch, it is time to create your PR for the Plotly team to review.
-
-```
-$ git push origin add-ff-type
+```bash
+cd SC-CAE
 ```
 
-## Be Part of the Discussion
+### Step 3: Create a Virtual Environment
 
-Go check out your newly pushed branch at https://github.com/plotly/plotly.py. If you have any other questions, check out the [Plotly Contributing Page](https://github.com/plotly/plotly.py/blob/master/CONTRIBUTING.md). Thanks for contributing to Plotly's Graphing Library!
+```bash
+python -m venv venv
+```
 
-### Table of Current Figure Factories
-| Name              | Documentation                             | In GitHub     |
-| ----------------- | ----------------------------------------- | ------------- |
-| 2D Density        | https://plot.ly/python/density-plots/     |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_2d_density.py|
-| Annotated Heatmap | https://plot.ly/python/annotated_heatmap/ |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_annotated_heatmap.py|
-| Candlestick       | https://plot.ly/python/candlestick-charts/|https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_candlestick.py|
-| Dendrogram        | https://plot.ly/python/dendrogram/        |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_dendrogram.py|
-| Distplot          | https://plot.ly/python/distplot/          |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_distplot.py|
-| Facet Grid        | https://plot.ly/python/facet-plots/       |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_facet_grid.py|
-| Gantt             | https://plot.ly/python/gantt/             |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_gantt.py|
-| Ohlc              | https://plot.ly/python/ohlc-charts/       |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_ohlc.py|
-| Quiver            | https://plot.ly/python/quiver-plots/      |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_quiver.py|
-| Scatterplot Matrix| https://plot.ly/python/scatterplot-matrix/|https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_scatterplot.py|
-| Streamline        | https://plot.ly/python/streamline-plots/  |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_streamline.py|
-| Table             | https://plot.ly/python/table/             |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_table.py|
-| Trisurf           | https://plot.ly/python/trisurf/           |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_trisurf.py|
-| Violin            | https://plot.ly/python/violin-plot/       |https://github.com/plotly/plotly.py/blob/master/plotly/figure_factory/_violin.py|
+Activate the environment on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+### Step 4: Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 5: Configure the Dataset
+
+Download the UCSD Ped1 dataset from its original source.
+
+Place the dataset in the directory expected by the data-loading scripts. Update dataset paths in the configuration if necessary.
+
+### Step 6: Run the Implementation
+
+Run the appropriate training or execution script after checking its dataset paths and configuration.
+
+For example:
+
+```bash
+python phase1_complete.py
+```
+
+The exact execution command depends on the script selected for the current implementation.
+
+## 13. Project Progress
+
+### Phase 1: Surveillance Anomaly Analysis
+
+Completed implementation activities:
+
+- UCSD Ped1 dataset preparation.
+- Image frame extraction and preprocessing.
+- CNN autoencoder architecture development.
+- Model training using normal images.
+- Image reconstruction.
+- Reconstruction error calculation.
+- Statistical threshold-based anomaly classification.
+- Heatmap visualization.
+- Experimental performance evaluation.
+
+### Future Enhancements
+
+- Incorporation of temporal information.
+- Investigation of adaptive reconstruction thresholds.
+- Evaluation using additional surveillance datasets.
+- Improvement of anomaly localization.
+- Investigation of lightweight deep learning architectures.
+- Extension to industrial inspection datasets.
+
+## 14. Limitations
+
+- The current experimental evaluation focuses on the UCSD Ped1 dataset.
+- Reconstruction quality can affect anomaly localization.
+- Some anomalous events may not exceed the selected threshold.
+- The model's performance may vary across different surveillance environments.
+- Further evaluation is required before extending the approach to industrial inspection applications.
+
+## 15. Research Team
+
+**Student Researcher:** Nishaa S.  
+**Programme:** M.Tech Computer Science and Engineering  
+**Institution:** Amrita Vishwa Vidyapeetham, Coimbatore
+
+**Research Guide:** Dr. N. Lalithamani  
+**Designation:** Associate Professor
+
+## 16. Repository
+
+The source code and implementation resources are available through the public GitHub repository.
+
+**GitHub:** https://github.com/YOUR-USERNAME/SC-CAE
+
+Replace the URL above with the actual repository link after creating it.
+
+## 17. Conclusion
+
+This project investigates a Convolutional Autoencoder-based approach for unsupervised anomaly analysis in surveillance images.
+
+The SC-CAE model learns normal visual patterns and identifies potential anomalies using reconstruction error and a statistical threshold. Reconstruction error heatmaps are also used to visualize suspicious image regions.
+
+The experimental evaluation on UCSD Ped1 provides an initial assessment of the proposed approach. Further improvements and testing on additional datasets can help investigate its applicability to broader visual anomaly detection and industrial inspection scenarios.
+
+---
+
+**Project:** A Convolutional Autoencoder Approach for Unsupervised Anomaly Analysis
+
+**Acronym:** SC-CAE
+
+**Research Area:** Deep Learning | Computer Vision | Unsupervised Anomaly Detection
+
+**Institution:** Amrita Vishwa Vidyapeetham, Coimbatore
