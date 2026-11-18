@@ -406,7 +406,6 @@ The source code and implementation resources are available through the public Gi
 
 **GitHub:** https://github.com/YOUR-USERNAME/SC-CAE
 
-Replace the URL above with the actual repository link after creating it.
 
 ## 17. Conclusion
 
